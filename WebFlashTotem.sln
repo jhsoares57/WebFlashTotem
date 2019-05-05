@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{2EA494DC-3324-40A6-B54C-DF8ACB803BE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTotem", "WebTotem\WebTotem.csproj", "{669C00D4-67ED-4021-BD79-CF43A5CB0719}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebListarPalestra", "WebListarPalestra\WebListarPalestra.csproj", "{DEF60328-54AD-4938-989E-06D8B1E06931}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EA494DC-3324-40A6-B54C-DF8ACB803BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA494DC-3324-40A6-B54C-DF8ACB803BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA494DC-3324-40A6-B54C-DF8ACB803BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA494DC-3324-40A6-B54C-DF8ACB803BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{669C00D4-67ED-4021-BD79-CF43A5CB0719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{669C00D4-67ED-4021-BD79-CF43A5CB0719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{669C00D4-67ED-4021-BD79-CF43A5CB0719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{669C00D4-67ED-4021-BD79-CF43A5CB0719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEF60328-54AD-4938-989E-06D8B1E06931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEF60328-54AD-4938-989E-06D8B1E06931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEF60328-54AD-4938-989E-06D8B1E06931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEF60328-54AD-4938-989E-06D8B1E06931}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3520BC62-C74A-49E9-9FBE-EC006E09B875}
+	EndGlobalSection
+EndGlobal
