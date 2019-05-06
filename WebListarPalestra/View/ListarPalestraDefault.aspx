@@ -11,13 +11,13 @@
     <form id="form1" runat="server">
         <div>
             <div class="row">
-                <asp:GridView ID="gvListaPalestra" runat="server" AutoGenerateColumns="false" Width="1025px">
+                <asp:GridView ID="gvListaPalestra" runat="server" HeaderStyle-BackColor="Salmon" AutoGenerateColumns="false" OnRowDataBound="gvListaPalestra_RowDataBound" Width="1025px">
                     <Columns>
-                       <asp:BoundField HeaderText="Código" DataField="Id" />
+                       <%--<asp:BoundField HeaderText="Código" DataField="Id" />--%>
                         <asp:BoundField HeaderText="Titulo" DataField="Titulo" />
                         <asp:BoundField HeaderText="Descrição" DataField="Descricao" />
                         <asp:BoundField HeaderText="Palestrante" DataField="Palestrante" />
-                        <asp:BoundField HeaderText="Data" DataField="Data" />
+                        <asp:BoundField HeaderText="Data" DataField="Data" DataFormatString="{0:dd/MM/yyyy}" />
                         <asp:BoundField HeaderText="Hora" DataField="Hora" />
                     </Columns>
                 </asp:GridView>

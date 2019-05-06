@@ -33,6 +33,11 @@
         window.alert("Registro atualizado com sucesso!")
     }
 
+
+     function mensagemErro() {
+        window.alert("Necessário preencher todos os campos!")
+    }
+
     function EditarPessoa(id, nome) {
         var url = 'LancarSecao.aspx?PalestraId=' + id;
         $("#frmModalUrl").attr("src", url);

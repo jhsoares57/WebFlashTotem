@@ -27,5 +27,24 @@ namespace WebListarPalestra.View
             gvListaPalestra.DataSource = listaPalestra;
             gvListaPalestra.DataBind();
         }
+
+        protected void gvListaPalestra_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                if (((e.Row.RowIndex + 1) % 2) == 0)
+                {
+                    e.Row.BackColor = System.Drawing.Color.LightSalmon;
+                }
+            }
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[0].HorizontalAlign = HorizontalAlign.Center;
+                e.Row.Cells[4].HorizontalAlign = HorizontalAlign.Center;
+                //e.Row.Cells[5].HorizontalAlign = HorizontalAlign.Center;
+            }
+        }
+
     }
 }

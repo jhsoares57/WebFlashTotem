@@ -14,6 +14,8 @@ namespace Library.Model
         private string palestrante;
         private DateTime data;
         private string hora;
+        private int tipoPalestra;
+        private string situacao;
 
         public int Id { get => id; set => id = value; }
         public string Titulo { get => titulo; set => titulo = value; }
@@ -21,5 +23,7 @@ namespace Library.Model
         public string Palestrante { get => palestrante; set => palestrante = value; }
         public DateTime Data { get => data; set => data = value; }
         public string Hora { get => hora; set => hora = value; }
+        public int TipoPalestra { get => tipoPalestra; set => tipoPalestra = value; }
+        public string Situacao { get => situacao; set => situacao = value; }
     }
 }

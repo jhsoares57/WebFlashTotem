@@ -30,6 +30,7 @@ namespace Library.DAL
             cf.Comando.Parameters.AddWithValue("@PALESTRANTE", p.Palestrante);
             cf.Comando.Parameters.AddWithValue("@DATA_PALESTRA", p.Data);
             cf.Comando.Parameters.AddWithValue("@HORA_PALESTRA", p.Hora);
+            cf.Comando.Parameters.AddWithValue("@TIPO_PALESTRA", p.TipoPalestra);
 
 
             cf.Comando.Parameters.AddWithValue("@ID_OUT", 0).Direction = ParameterDirection.Output;
@@ -230,6 +231,7 @@ namespace Library.DAL
             cf.Comando.Parameters.AddWithValue("@PALESTRANTE", c.Palestrante);
             cf.Comando.Parameters.AddWithValue("@DATA_PALESTRA", c.Data);
             cf.Comando.Parameters.AddWithValue("@HORA_PALESTRA", c.Hora);
+            cf.Comando.Parameters.AddWithValue("@TIPO_PALESTRA", c.TipoPalestra);
             cf.Comando.Parameters.AddWithValue("@ID_PALESTRA", c.Id);//Necessário ID para saber que registro será atualizado
 
             cf.Comando.CommandType = CommandType.StoredProcedure;
@@ -242,6 +244,8 @@ namespace Library.DAL
             //Este método retorna um número inteiro, conforme o que a assinatura pede.
             return linhasAfetadas;
         }
+
+        //Ainda não está sendo utilizado
         public int UpdateOld(Palestra P)
         {
             try
