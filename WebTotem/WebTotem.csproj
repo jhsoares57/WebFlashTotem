@@ -170,7 +170,6 @@
     <Content Include="View\AcessoWeb.aspx" />
     <Content Include="View\CadastrarPalestra.aspx" />
     <Content Include="View\CadastrarUsuario.aspx" />
-    <Content Include="View\ListaPalestra.aspx" />
     <Content Include="View\ListarPalestra.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -224,13 +223,6 @@
     </Compile>
     <Compile Include="View\CadastrarUsuario.aspx.designer.cs">
       <DependentUpon>CadastrarUsuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\ListaPalestra.aspx.cs">
-      <DependentUpon>ListaPalestra.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\ListaPalestra.aspx.designer.cs">
-      <DependentUpon>ListaPalestra.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\ListarPalestra.aspx.cs">
       <DependentUpon>ListarPalestra.aspx</DependentUpon>

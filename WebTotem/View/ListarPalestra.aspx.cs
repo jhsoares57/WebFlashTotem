@@ -7,17 +7,27 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Library.Model.Enuns;
 
 namespace WebTotem.View
 {
     public partial class ListarPalestra : System.Web.UI.Page
     {
         PalestraDAL pService = new PalestraDAL();
+        Usuario usuarioLogado = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!Page.IsPostBack)
+            usuarioLogado = (Usuario)Session["Usuario"];
+
+            Button btnUser = (Button)FindControl("btnUser");
+            if (!Page.IsPostBack)
             {
                 CarregarPalestra();
+
+                if (usuarioLogado.TipoUsuario == PerfilEnum.Gestor)
+                {
+                    btnUser.Visible = false;
+                }
             }
         }
         public void CarregarPalestra()
@@ -65,22 +75,20 @@ namespace WebTotem.View
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                Panel pnlLinhaExcluir = (Panel)e.Row.FindControl("pnlExcluir");
+              
                 Panel pnlLinhaEditar = (Panel)e.Row.FindControl("pnlEditar");
 
-                //if (usuarioLogado.TipoUsuario == PerfilEnum.UsuarioComum)
-                //{
-                //    pnlLinhaEditar.Visible = false;
-                //    pnlLinhaExcluir.Visible = false;
-                //}
-                //if (usuarioLogado.TipoUsuario == PerfilEnum.Gestor)
-                //{
-                //    pnlLinhaExcluir.Visible = false;
-                //}
-                //if (usuarioLogado.TipoUsuario == PerfilEnum.Administrador)
-                //{
-                //    pnlLinhaAdicionarContato.Visible = false;
-                //}
+               
+                if (usuarioLogado.TipoUsuario == PerfilEnum.Gestor)
+                {
+                    pnlLinhaEditar.Visible = false;
+                }
+
+                if (usuarioLogado.TipoUsuario == PerfilEnum.UsuarioComum)
+                {
+                    pnlLinhaEditar.Visible = false;
+                }
+
 
             }
             if (e.Row.RowType == DataControlRowType.DataRow)

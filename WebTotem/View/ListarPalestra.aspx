@@ -11,8 +11,8 @@
             return false;
         }
 
-         function CadastrarPessoa() {
-            var url = 'CadastrarPalestra.aspx';
+         function CadastrarUser() {
+            var url = 'CadastrarUsuario.aspx';
             $("#frmModalUrl").attr("src", url);
             $("#frmModal").modal();
             return false;
@@ -124,6 +124,12 @@
                                 value="Nova Palestra" onclick="CadastrarPalestra()">
                                 <i class="glyphicon glyphicon-pencil"></i>&nbsp;Novo 
                             </button>
+                            &nbsp;
+                            &nbsp;
+                            <button type="button" name="btnNovo" id="btnUser" class="btn btn-primary form-control"
+                                value="Cadastrar Usuário" onclick="CadastrarUser()">
+                                <i class="glyphicon glyphicon-user"></i>&nbsp;Usuário
+                            </button>
                             <br />
                             <br />
                             <div class="row">
@@ -142,12 +148,7 @@
                                                             <i class="glyphicon glyphicon-pencil"></i>
                                                         </button>
                                                     </asp:Panel>
-                                                    <asp:Panel ID="pnlExcluir" runat="server">
-                                                        <button class="btn btn-danger btn-sm" title="Alterar Pessoa" style="height: 30px"
-                                                            type="button" onclick='ExcluirPessoa(<%# Eval("Id") %>); return false;'>
-                                                            <i class="glyphicon glyphicon-remove"></i>
-                                                        </button>
-                                                    </asp:Panel>
+                                                   
 
                                                 </ItemTemplate>
                                             </asp:TemplateField>

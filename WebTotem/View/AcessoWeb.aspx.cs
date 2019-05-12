@@ -24,7 +24,7 @@ namespace WebTotem.View
             try
             {
                 UsuarioBLL uService = new UsuarioBLL();
-               // Usuario usuario = new Usuario();
+                Usuario usuario = new Usuario();
 
                 usuario = uService.FindByLogin(txtUsuario.Text, Criptografia.GerarMD5(txtSenha.Text));
 
