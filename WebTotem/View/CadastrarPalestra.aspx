@@ -8,22 +8,15 @@
     <title></title>
     <link href="../Content/bootstrap.css" rel="stylesheet" />
     <script src="../Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="../Scripts/jquery-3.3.1.min.js"></script> 
 </head>
 <script type="text/javascript">
     jQuery(function ($) {
         $("#txtData").mask("99/99/9999");
         $("#txtHora").mask('00:00');
     });
-    function ChamarFecharPopUp() {
-        parent.FecharPopUP();
-    }
-    function ChamarExibirMensagemErro(msg) {
-        parent.ExibirMensagemErro(msg);
-    }
-    function ChamarExibirMensagemSucesso(msg) {
-        parent.ChamarExibirMensagemSucesso(msg);
-    }
+
+   
     function mensagem() {
         window.alert("Registro Salvo com sucesso!")
     }
@@ -36,14 +29,8 @@
 
      function mensagemErro() {
         window.alert("Necessário preencher todos os campos!")
-    }
+     }
 
-    function EditarPessoa(id, nome) {
-        var url = 'LancarSecao.aspx?PalestraId=' + id;
-        $("#frmModalUrl").attr("src", url);
-        $("#frmModal").modal();
-        return false;
-    }
 
 </script>
 <body>

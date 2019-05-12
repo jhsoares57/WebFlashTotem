@@ -16,7 +16,7 @@ namespace WebListarPalestra.View
         {
             if (!Page.IsPostBack)
             {
-                CarregarPalestra();
+               CarregarPalestra();
             }
         }
 
@@ -34,7 +34,7 @@ namespace WebListarPalestra.View
             {
                 if (((e.Row.RowIndex + 1) % 2) == 0)
                 {
-                    e.Row.BackColor = System.Drawing.Color.LightSalmon;
+                   // e.Row.BackColor = System.Drawing.Color.MediumOrchid;
                 }
             }
 
@@ -44,7 +44,6 @@ namespace WebListarPalestra.View
                 e.Row.Cells[4].HorizontalAlign = HorizontalAlign.Center;
                 //e.Row.Cells[5].HorizontalAlign = HorizontalAlign.Center;
             }
-        }
-
+        }        
     }
 }

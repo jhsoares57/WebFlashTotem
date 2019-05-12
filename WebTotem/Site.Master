@@ -12,12 +12,13 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-      <script src="Scripts/jquery-3.3.1.min.js"></script>
+    
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/bootbox.min.js"></script>
     <script src="Scripts/toastr.js"></script>
+    <script src="Scripts/toastr.min.js"></script>
     <link href="Content/toastr.css" rel="stylesheet" />
-
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />

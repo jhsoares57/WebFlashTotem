@@ -15,7 +15,7 @@
         <div>
             <div class="row">
                 <div >
-                    <asp:Label ID="lblPalestra" runat="server" Text="Tipo de Palestra:"></asp:Label>
+                   <%-- <asp:Label ID="lblPalestra" runat="server" Text="Tipo de Palestra:"></asp:Label>
                 &nbsp;&nbsp;&nbsp;
                 </div>
                 <br />
@@ -26,11 +26,10 @@
                         <asp:ListItem Value="2" Text="Jurídica"></asp:ListItem>
                         <asp:ListItem Value="3" Text="Financeira"></asp:ListItem>
                     </asp:DropDownList>
-                </div>
+                </div>--%>
 
-                <asp:GridView ID="gvListaPalestra" runat="server" HeaderStyle-BackColor="Salmon" AutoGenerateColumns="false" OnRowDataBound="gvListaPalestra_RowDataBound" Width="1025px">
+                <asp:GridView ID="gvListaPalestra" runat="server" HeaderStyle-BackColor="#BE7DFF" AutoGenerateColumns="false" OnRowDataBound="gvListaPalestra_RowDataBound" Width="1025px"  Font-Bold="True" Font-Size="X-Large" Font-Strikeout="False" Height="193px">
                     <Columns>
-                        <%--<asp:BoundField HeaderText="Código" DataField="Id" />--%>
                         <asp:BoundField HeaderText="Titulo" DataField="Titulo" />
                         <asp:BoundField HeaderText="Descrição" DataField="Descricao" />
                         <asp:BoundField HeaderText="Palestrante" DataField="Palestrante" />

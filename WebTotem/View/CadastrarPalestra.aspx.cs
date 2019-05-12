@@ -36,33 +36,14 @@ namespace WebTotem.View
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            string erros = string.Empty;
+           
             try
             {
                
                 if (string.IsNullOrEmpty(txtCodigo.Text))
                 {
 
-                    if (string.IsNullOrEmpty(txtTitulo.Text))
-                        erros += "* Digite um titulo <br/><br/>";
-
-                    if (string.IsNullOrEmpty(txtDescricao.Text))
-                        erros += "* Digite uma descrição<br/><br/>";
-
-                    if (string.IsNullOrEmpty(txtPalestrante.Text))
-                        erros += "* Digite um palestrante<br/><br/>";
-
-                    if (string.IsNullOrEmpty(txtData.Text))
-                        erros += "* Digite uma data válída<br/><br/>";
-
-                    if (string.IsNullOrEmpty(txtHora.Text))
-                        erros += "* Digite uma hora válída<br/><br/>";
-
-                    if (!string.IsNullOrEmpty(erros))
-                    {
-                        throw new Exception(erros);
-                    }
-
+                    
 
                     Palestra p = new Palestra();
                     p.Titulo = txtTitulo.Text;
@@ -75,36 +56,12 @@ namespace WebTotem.View
                     pService.Insert(p);
                     
                         ClientScript.RegisterStartupScript(this.GetType(), "Mensagem", "<script>mensagem();</script>");
-                        //ClientScript.RegisterStartupScript(this.GetType(), "Mensagem", "<script>ExibirMensagemSucesso();</script>");
+                       
                     
                 }
                 else
                 {
-
-
-                    if (string.IsNullOrEmpty(txtTitulo.Text))
-                        erros += "* Digite um titulo <br/><br/>";
-
-                    if (string.IsNullOrEmpty(txtDescricao.Text))
-                        erros += "* Digite uma descrição<br/><br/>";
-
-                    if (string.IsNullOrEmpty(txtPalestrante.Text))
-                        erros += "* Digite um palestrante<br/><br/>";
-
-                    if (string.IsNullOrEmpty(txtData.Text))
-                        erros += "* Digite uma data válída<br/><br/>";
-
-                    if (string.IsNullOrEmpty(txtHora.Text))
-                        erros += "* Digite uma hora válída<br/><br/>";
-
-
-                    if ((ddlTipoPalestra.Text == "Selecione"))
-                        erros += "* Selecione um tipo de palestra<br/><br/>";
-
-                    if (!string.IsNullOrEmpty(erros))
-                    {
-                        throw new Exception(erros);
-                    }
+                   
 
                     Palestra p = new Palestra();
                     p.Titulo = txtTitulo.Text;
@@ -117,16 +74,14 @@ namespace WebTotem.View
                     pService.Update(p); 
                     
                         ClientScript.RegisterStartupScript(this.GetType(), "Mensagem", "<script>mensagemUPDT();</script>");
-                        //ClientScript.RegisterStartupScript(this.GetType(), "Mensagem", "<script>ExibirMensagemSucesso();</script>");
+                       
                     
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "Mensagem", "<script>mensagemErro();</script>");
-                //string scriptMensagem = string.Format("<script>ChamarExibirMensagemErro('{0}');</script>", ex.Message);
-                //ClientScript.RegisterStartupScript(this.GetType(), "ChaveMensagem", scriptMensagem);
-               // throw;
+               
             }
         }
     }

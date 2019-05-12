@@ -62,7 +62,7 @@ namespace WebTotem.View
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                Panel pnlLinhaExcluir = (Panel)e.Row.FindControl("pnlExcluir");
+                //Panel pnlLinhaExcluir = (Panel)e.Row.FindControl("pnlExcluir");
                 Panel pnlLinhaEditar = (Panel)e.Row.FindControl("pnlEditar");
 
                 //if (usuarioLogado.TipoUsuario == PerfilEnum.UsuarioComum)
@@ -87,13 +87,13 @@ namespace WebTotem.View
                     e.Row.BackColor = System.Drawing.Color.LightSalmon;
                 }
             }
-            //if (e.Row.RowType == DataControlRowType.DataRow)            
-            //{
-            //    e.Row.Cells[1].HorizontalAlign = HorizontalAlign.Center;
-            //    e.Row.Cells[2].HorizontalAlign = HorizontalAlign.Center;
-            //    e.Row.Cells[3].HorizontalAlign = HorizontalAlign.Center;
-            //    e.Row.Cells[1].HorizontalAlign = HorizontalAlign.Center;
-            //}
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[0].HorizontalAlign = HorizontalAlign.Center;
+                //    e.Row.Cells[2].HorizontalAlign = HorizontalAlign.Center;
+                //    e.Row.Cells[3].HorizontalAlign = HorizontalAlign.Center;
+                //    e.Row.Cells[1].HorizontalAlign = HorizontalAlign.Center;
+            }
         }
     }
 }
