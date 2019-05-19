@@ -20,7 +20,7 @@ namespace WebListarPalestra.View
             }
         }
 
-
+        //Metodo para carregar as pelestas
         public void CarregarPalestra()
         {
             List<Palestra> listaPalestra = pService.FindAllList();
@@ -30,19 +30,23 @@ namespace WebListarPalestra.View
 
         protected void gvListaPalestra_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                if (((e.Row.RowIndex + 1) % 2) == 0)
-                {
-                   // e.Row.BackColor = System.Drawing.Color.MediumOrchid;
-                }
-            }
+          
+            //if (e.Row.RowType == DataControlRowType.DataRow)
+            //{
+            //    if (e.Row.RowState == DataControlRowState.Alternate)
+            //    {
+            //        e.Row.Style.Add("background-color", "#DDA0DD");
+            //        }
+            //}
 
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 e.Row.Cells[0].HorizontalAlign = HorizontalAlign.Center;
+                e.Row.Cells[1].HorizontalAlign = HorizontalAlign.Center;
+                e.Row.Cells[2].HorizontalAlign = HorizontalAlign.Center;
+                e.Row.Cells[3].HorizontalAlign = HorizontalAlign.Center;
                 e.Row.Cells[4].HorizontalAlign = HorizontalAlign.Center;
-                //e.Row.Cells[5].HorizontalAlign = HorizontalAlign.Center;
+                e.Row.Cells[5].HorizontalAlign = HorizontalAlign.Center;
             }
         }        
     }

@@ -6,39 +6,28 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-   <%-- <link href="../Content/bootstrap.css" rel="stylesheet" />
-    <script src="../Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/jquery-3.3.1.min.js"></script>--%>
+    <style type="text/css">
+        .auto-style1 {
+            margin-top: 16px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
             <div class="row">
-                <div >
-                   <%-- <asp:Label ID="lblPalestra" runat="server" Text="Tipo de Palestra:"></asp:Label>
-                &nbsp;&nbsp;&nbsp;
-                </div>
-                <br />
-                <div >
-                    <asp:DropDownList ID="ddlPesquisa" runat="server">
-                        <asp:ListItem Value="0" Text="Todas"></asp:ListItem>
-                        <asp:ListItem Value="1" Text="Saúde"></asp:ListItem>
-                        <asp:ListItem Value="2" Text="Jurídica"></asp:ListItem>
-                        <asp:ListItem Value="3" Text="Financeira"></asp:ListItem>
-                    </asp:DropDownList>
-                </div>--%>
+                 
 
-                <asp:GridView ID="gvListaPalestra" runat="server" HeaderStyle-BackColor="#BE7DFF" AutoGenerateColumns="false" OnRowDataBound="gvListaPalestra_RowDataBound" Width="1025px"  Font-Bold="True" Font-Size="X-Large" Font-Strikeout="False" Height="193px">
+                <asp:GridView ID="gvListaPalestra" runat="server" HeaderStyle-BackColor="#BE7DFF" AutoGenerateColumns="false" OnRowDataBound="gvListaPalestra_RowDataBound" Width="1025px"  CellPadding="10" Font-Bold="False" Font-Size="Large" Font-Strikeout="False"  GridLines="Horizontal" Font-Overline="False" Font-Italic="False" CssClass="auto-style1" Font-Names="sans-serif">
                     <Columns>
                         <asp:BoundField HeaderText="Titulo" DataField="Titulo" />
                         <asp:BoundField HeaderText="Descrição" DataField="Descricao" />
                         <asp:BoundField HeaderText="Palestrante" DataField="Palestrante" />
+                        <asp:BoundField HeaderText="Local" DataField="LocalPalestra" />
                         <asp:BoundField HeaderText="Data" DataField="Data" DataFormatString="{0:dd/MM/yyyy}" />
                         <asp:BoundField HeaderText="Hora" DataField="Hora" />
                     </Columns>
                 </asp:GridView>
             </div>
-        </div>
     </form>
 </body>
 </html>

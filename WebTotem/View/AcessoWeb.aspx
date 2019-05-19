@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="form-login">
                     <div class="panel panel-danger" >
-                        <div class="panel-heading">
+                        <div class="panel-heading" >
                             <div class="panel-title">Login do Sistema</div>
                         </div>
                         <div style="padding-top: 30px" class="panel-body">

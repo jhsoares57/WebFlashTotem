@@ -19,16 +19,11 @@ namespace WebTotem.View
         {
             usuarioLogado = (Usuario)Session["Usuario"];
 
-            Button btnUser = (Button)FindControl("btnUser");
-            if (!Page.IsPostBack)
+            if(Session["Usuario"] == null)
             {
-                CarregarPalestra();
-
-                if (usuarioLogado.TipoUsuario == PerfilEnum.Gestor)
-                {
-                    btnUser.Visible = false;
-                }
+                Response.Redirect("AcessoWeb.aspx");
             }
+            CarregarPalestra();
         }
         public void CarregarPalestra()
         {
@@ -97,6 +92,8 @@ namespace WebTotem.View
                 {
                     e.Row.BackColor = System.Drawing.Color.LightSalmon;
                 }
+
+                
             }
             //if (e.Row.RowType == DataControlRowType.DataRow)            
             //{

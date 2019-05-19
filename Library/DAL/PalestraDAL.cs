@@ -30,7 +30,7 @@ namespace Library.DAL
             cf.Comando.Parameters.AddWithValue("@PALESTRANTE", p.Palestrante);
             cf.Comando.Parameters.AddWithValue("@DATA_PALESTRA", p.Data);
             cf.Comando.Parameters.AddWithValue("@HORA_PALESTRA", p.Hora);
-            cf.Comando.Parameters.AddWithValue("@TIPO_PALESTRA", p.TipoPalestra);
+            cf.Comando.Parameters.AddWithValue("@ENDERECO_PALESTRA", p.LocalPalestra);
 
 
             cf.Comando.Parameters.AddWithValue("@ID_OUT", 0).Direction = ParameterDirection.Output;
@@ -92,7 +92,7 @@ namespace Library.DAL
         {
             //Consulta select com inner join
             StringBuilder query = new StringBuilder();
-            query.AppendLine("SELECT ID_PALESTRA, TITULO, DESCRICAO, PALESTRANTE, DATA_PALESTRA, HORA_PALESTRA FROM TB_PALESTRA ");
+            query.AppendLine("SELECT ID_PALESTRA, TITULO, DESCRICAO, PALESTRANTE,ENDERECO_PALESTRA, DATA_PALESTRA, HORA_PALESTRA FROM TB_PALESTRA WHERE DATA_PALESTRA >= GETDATE() ORDER BY DATA_PALESTRA DESC ");
 
             cf = new ConnectionFactory();
             cf.Comando = cf.Conexao.CreateCommand();
@@ -115,6 +115,7 @@ namespace Library.DAL
                 p.Palestrante = reader["PALESTRANTE"].ToString();
                 p.Data = Convert.ToDateTime(reader["DATA_PALESTRA"].ToString());
                 p.Hora = reader["HORA_PALESTRA"].ToString();
+                p.LocalPalestra = reader["ENDERECO_PALESTRA"].ToString();
 
                 listaPalestras.Add(p);//Adicionando o objeto para a lista
             }
@@ -182,8 +183,9 @@ namespace Library.DAL
                 c.Titulo = reader["TITULO"].ToString();
                 c.Descricao = reader["DESCRICAO"].ToString();
                 c.Palestrante = reader["PALESTRANTE"].ToString();
-                c.Data = Convert.ToDateTime(reader["DATA_PALESTRA"]);
+                c.Data = Convert.ToDateTime(reader["DATA_PALESTRA"].ToString());
                 c.Hora = reader["HORA_PALESTRA"].ToString();
+                c.LocalPalestra = reader["ENDERECO_PALESTRA"].ToString();
             }
             cf.Conexao.Close();
             return c; //Retorna o objeto do tipo Pessoa
@@ -231,7 +233,7 @@ namespace Library.DAL
             cf.Comando.Parameters.AddWithValue("@PALESTRANTE", c.Palestrante);
             cf.Comando.Parameters.AddWithValue("@DATA_PALESTRA", c.Data);
             cf.Comando.Parameters.AddWithValue("@HORA_PALESTRA", c.Hora);
-            cf.Comando.Parameters.AddWithValue("@TIPO_PALESTRA", c.TipoPalestra);
+            cf.Comando.Parameters.AddWithValue("@ENDERECO_PALESTRA", c.LocalPalestra);
             cf.Comando.Parameters.AddWithValue("@ID_PALESTRA", c.Id);//Necessário ID para saber que registro será atualizado
 
             cf.Comando.CommandType = CommandType.StoredProcedure;
@@ -246,45 +248,45 @@ namespace Library.DAL
         }
 
         //Ainda não está sendo utilizado
-        public int UpdateOld(Palestra P)
-        {
-            try
-            {
-                cf = new ConnectionFactory();
-                StringBuilder query = new StringBuilder();
+        //public int UpdateOld(Palestra P)
+        //{
+        //    try
+        //    {
+        //        cf = new ConnectionFactory();
+        //        StringBuilder query = new StringBuilder();
 
-                int linhasAfetadas = 0;
+        //        int linhasAfetadas = 0;
 
-                query.AppendLine(" UPDATE TB_PALESTRA SET ");
-                query.AppendLine("TITULO = @TITULO,");
-                query.AppendLine("DESCRICAO = @DESCRICAO,");
-                query.AppendLine("PALESTRANTE = @PALESTRANTE,");
-                query.AppendLine("DATA_PALESTRA = @DATA_PALESTRA,");
-                query.AppendLine("HORA_PALESTRA = @HORA_PALESTRA");
-                query.AppendLine("WHERE ID_PALESTRA = @ID_PALESTRA");
+        //        query.AppendLine(" UPDATE TB_PALESTRA SET ");
+        //        query.AppendLine("TITULO = @TITULO,");
+        //        query.AppendLine("DESCRICAO = @DESCRICAO,");
+        //        query.AppendLine("PALESTRANTE = @PALESTRANTE,");
+        //        query.AppendLine("DATA_PALESTRA = @DATA_PALESTRA,");
+        //        query.AppendLine("HORA_PALESTRA = @HORA_PALESTRA");
+        //        query.AppendLine("WHERE ID_PALESTRA = @ID_PALESTRA");
 
-                cf.Comando = cf.Conexao.CreateCommand();
+        //        cf.Comando = cf.Conexao.CreateCommand();
 
-                cf.Comando.Parameters.AddWithValue("@TITULO", P.Titulo);
-                cf.Comando.Parameters.AddWithValue("@DESCRICAO", P.Descricao);
-                cf.Comando.Parameters.AddWithValue("@PALESTRANTE", P.Palestrante);
-                cf.Comando.Parameters.AddWithValue("@DATA_PALESTRA", P.Data);
-                cf.Comando.Parameters.AddWithValue("@HORA_PALESTRA", P.Hora);
-                cf.Comando.Parameters.AddWithValue("@ID_PALESTRA", P.Id);
+        //        cf.Comando.Parameters.AddWithValue("@TITULO", P.Titulo);
+        //        cf.Comando.Parameters.AddWithValue("@DESCRICAO", P.Descricao);
+        //        cf.Comando.Parameters.AddWithValue("@PALESTRANTE", P.Palestrante);
+        //        cf.Comando.Parameters.AddWithValue("@DATA_PALESTRA", P.Data);
+        //        cf.Comando.Parameters.AddWithValue("@HORA_PALESTRA", P.Hora);
+        //        cf.Comando.Parameters.AddWithValue("@ID_PALESTRA", P.Id);
 
-                cf.Comando.CommandType = CommandType.Text;
-                cf.Comando.CommandText = query.ToString();
-                cf.Conexao.Open();
+        //        cf.Comando.CommandType = CommandType.Text;
+        //        cf.Comando.CommandText = query.ToString();
+        //        cf.Conexao.Open();
 
-                linhasAfetadas = cf.Comando.ExecuteNonQuery();
-                cf.Conexao.Close();
+        //        linhasAfetadas = cf.Comando.ExecuteNonQuery();
+        //        cf.Conexao.Close();
 
-                return linhasAfetadas;
-            }
-            catch (Exception EX)
-            {
-                throw EX;
-            }
-        }
+        //        return linhasAfetadas;
+        //    }
+        //    catch (Exception EX)
+        //    {
+        //        throw EX;
+        //    }
+        //}
     }
 }

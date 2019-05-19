@@ -25,10 +25,14 @@ namespace WebTotem.View
                     txtTitulo.Text = p.Titulo.ToString();
                     txtDescricao.Text = p.Descricao.ToString();
                     txtPalestrante.Text = p.Palestrante.ToString();
-                    txtData.Text = p.Data.ToString("dd/MM/yyyy");
+                    txtData.Text = p.Data.ToString();
                     txtHora.Text = p.Hora.ToString();
-
+                    txtEndereco.Text = p.LocalPalestra.ToString();
                 }
+            }
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("AcessoWeb.aspx");
             }
         }
 
@@ -51,7 +55,7 @@ namespace WebTotem.View
                     p.Palestrante = txtPalestrante.Text;
                     p.Data = Convert.ToDateTime(txtData.Text);
                     p.Hora = txtHora.Text;
-                    p.TipoPalestra = Convert.ToInt32(ddlTipoPalestra.SelectedIndex);
+                    p.LocalPalestra = txtEndereco.Text;
 
                     pService.Insert(p);
                     
@@ -69,6 +73,7 @@ namespace WebTotem.View
                     p.Palestrante = txtPalestrante.Text;
                     p.Data = Convert.ToDateTime(txtData.Text);
                     p.Hora = txtHora.Text;
+                    p.LocalPalestra = txtEndereco.Text;
                     p.Id = Convert.ToInt32(txtCodigo.Text);
 
                     pService.Update(p); 

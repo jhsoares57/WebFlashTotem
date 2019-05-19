@@ -121,6 +121,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\flashpalestra - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\flashtotem - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\flashtotem - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\flashtotem - Web Deploy2.pubxml" />
+    <None Include="Properties\PublishProfiles\WebListarPalestra - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -153,7 +158,9 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="View\ListarPalestraDefault.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>

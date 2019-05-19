@@ -53,16 +53,6 @@
                                 <asp:HiddenField ID="hdnIDPessoa" runat="server" />
                             </div>
                             <br />
-                            <div class="col-md-6">
-                                <asp:Label ID="Label1" runat="server" Text="Tipo de área sa palestra"></asp:Label>
-                                <br />
-                                <asp:DropDownList ID="ddlTipoPalestra" runat="server">
-                                    <asp:ListItem Value="0" Text="Selecione" Selected="True"></asp:ListItem>
-                                    <asp:ListItem Value="1" Text="Saúde"></asp:ListItem>
-                                    <asp:ListItem Value="2" Text="Jurídica"></asp:ListItem>
-                                    <asp:ListItem Value="3" Text="Financeira"></asp:ListItem>
-                                </asp:DropDownList>
-                            </div>
 
                             <div class="col-md-6">
                                 <asp:Label ID="lblTitulo" runat="server" Text="Título da Palestra:"></asp:Label>
@@ -79,6 +69,13 @@
                                 <br />
                                 <asp:TextBox ID="txtPalestrante" runat="server" Width="345px"></asp:TextBox>
                             </div>
+
+                            <div class="col-md-6">
+                                <asp:Label ID="Label2" runat="server" Text="Endereço:"></asp:Label>
+                                <br />
+                                <asp:TextBox ID="txtEndereco" runat="server" Width="345px"></asp:TextBox>
+                            </div>
+
                             <div class="col-md-6">
                                 <asp:Label ID="lblData" runat="server" Text="Data da Palestra:"></asp:Label>
                                 &nbsp
