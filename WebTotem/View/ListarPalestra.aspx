@@ -126,10 +126,7 @@
                             </button>
                             &nbsp;
                             &nbsp;
-                            <button type="button" name="btnNovo" id="btnUser" class="btn btn-primary form-control"
-                                value="Cadastrar Usuário" onclick="CadastrarUser()">
-                                <i class="glyphicon glyphicon-user"></i>&nbsp;Usuário
-                            </button>
+                          
                             <br />
                             <br />
                             <div class="row">
