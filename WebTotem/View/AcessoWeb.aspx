@@ -38,12 +38,12 @@
                             <div align="center">
                                 <asp:Label ID="Label1" runat="server" Text="Usuário:" Font-Size="Medium"></asp:Label>
                                 <div class="input-group">
-                                    <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control " placeholder="Usuario"></asp:TextBox>
+                                    <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control " border-radius="24px" placeholder="Usuario"></asp:TextBox>
                                 </div>
                                 <br />
                                 <asp:Label ID="Label2" runat="server" Text="Senha:" Font-Size="Medium" ></asp:Label>
                                 <div class="input-group">
-                                    <asp:TextBox ID="txtSenha" runat="server" CssClass="form-control input_pass" placeholder="Senha" Type="password" Style="left: 0px; top: 0px"></asp:TextBox>
+                                    <asp:TextBox ID="txtSenha" runat="server" CssClass="form-control input_pass" border-radius="24px" placeholder="Senha" Type="password" Style="left: 0px; top: 0px"></asp:TextBox>
                                 </div>
                                 <br />
                                 <div class="input-group">
