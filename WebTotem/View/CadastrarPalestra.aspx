@@ -11,7 +11,7 @@
     <script src="../Scripts/jquery-3.3.1.min.js"></script> 
 </head>
 <script type="text/javascript">
-    jQuery(function ($) {
+   jQuery(function ($) {
         $("#txtData").mask("99/99/9999");
         $("#txtHora").mask('00:00');
     });

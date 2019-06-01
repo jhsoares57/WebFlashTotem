@@ -47,23 +47,7 @@ namespace WebTotem.View
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
 
-            //try
-            //{
-            //    int Id = Convert.ToInt32(hdnId.Value);
-
-            //    if (pService.Delete(Id))
-            //    {
-            //        CarregarPalestra();
-            //        string scriptMensagem = "<script>ExibirMensagemSucesso('Exclusão realizada com sucesso.');<script>";
-            //        ClientScript.RegisterStartupScript(this.GetType(), "Mensagem", scriptMensagem);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    string scriptMensagem = string.Format("<script>ExibirMensagemErro('{0}');<script>", ex.Message);
-            //    ClientScript.RegisterStartupScript(this.GetType(), "ChaveMensagem", scriptMensagem);
-            //}
+          
         }
 
         protected void gvCadastroPessoa_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -95,14 +79,8 @@ namespace WebTotem.View
 
                 
             }
-            //if (e.Row.RowType == DataControlRowType.DataRow)            
-            //{
-            //    e.Row.Cells[1].HorizontalAlign = HorizontalAlign.Center;
-            //    e.Row.Cells[2].HorizontalAlign = HorizontalAlign.Center;
-            //    e.Row.Cells[3].HorizontalAlign = HorizontalAlign.Center;
-            //    e.Row.Cells[1].HorizontalAlign = HorizontalAlign.Center;
-            //}
-        }
+            
+            }
 
     }
 }

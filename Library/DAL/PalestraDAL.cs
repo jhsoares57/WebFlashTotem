@@ -58,7 +58,7 @@ namespace Library.DAL
         {
             //Consulta select com inner join
             StringBuilder query = new StringBuilder();
-            query.AppendLine("SELECT ID_PALESTRA, TITULO, PALESTRANTE FROM TB_PALESTRA ");
+            query.AppendLine("SELECT ID_PALESTRA, TITULO, PALESTRANTE, DATA_PALESTRA FROM TB_PALESTRA ");
 
             cf = new ConnectionFactory();
             cf.Comando = cf.Conexao.CreateCommand();
@@ -78,6 +78,7 @@ namespace Library.DAL
                 p.Id = Convert.ToInt32(reader["ID_PALESTRA"]);
                 p.Titulo = reader["TITULO"].ToString();
                 p.Palestrante = reader["PALESTRANTE"].ToString();
+                p.Data = Convert.ToDateTime(reader["DATA_PALESTRA"].ToString());
                 
                 listaPessoas.Add(p);//Adicionando o objeto para a lista
             }
@@ -126,37 +127,7 @@ namespace Library.DAL
             return listaPalestras;
         }
 
-        //public Palestra FindByIdPalestra(int id)
-        //{
-        //    string query = "SELECT ID_PALESTRA, TITULO, DESCRICAO, PALESTRANTE, DATA_PALESTRA, HORA_PALESTRA FROM TB_PALESTRA WHERE ID_PALESTRA = @ID_PALESTRA";
-
-        //    //Cria um objeto do tipo Pessoa
-        //    Palestra c = new Palestra();
-
-        //    cf = new ConnectionFactory();
-        //    cf.Comando = cf.Conexao.CreateCommand();
-        //    cf.Comando.Parameters.AddWithValue("@ID_PALESTRA", id);
-        //    cf.Comando.CommandType = CommandType.Text;
-        //    cf.Comando.CommandText = query;
-
-        //    cf.Conexao.Open();
-        //    //Objeto SqlDataReader: Armazena um buffer dos resultados da consulta
-        //    SqlDataReader reader = cf.Comando.ExecuteReader();
-
-        //    //Se o buffer conter linhas, entrará no IF parar ler os dados da pessoa
-        //    //e carregar o objeto que será devolvido pelo Método
-        //    if (reader.Read())
-        //    {
-        //        c.Id = Convert.ToInt32(reader["ID_PALESTRA"]);
-        //        c.Titulo = reader["TITULO"].ToString();
-        //        c.Titulo = reader["DESCRICAO"].ToString();
-        //        c.Titulo = reader["PALESTRANTE"].ToString();
-        //        c.Data = Convert.ToDateTime(reader["DATA_PALESTRA"]);
-        //        c.Hora = Convert.ToDateTime(reader["HORA_PALESTRA"]);
-        //    }
-        //    cf.Conexao.Close();
-        //    return c; //Retorna o objeto do tipo Pessoa
-        //}
+        
 
         public Palestra FindById(int id)
         {
@@ -247,46 +218,6 @@ namespace Library.DAL
             return linhasAfetadas;
         }
 
-        //Ainda não está sendo utilizado
-        //public int UpdateOld(Palestra P)
-        //{
-        //    try
-        //    {
-        //        cf = new ConnectionFactory();
-        //        StringBuilder query = new StringBuilder();
-
-        //        int linhasAfetadas = 0;
-
-        //        query.AppendLine(" UPDATE TB_PALESTRA SET ");
-        //        query.AppendLine("TITULO = @TITULO,");
-        //        query.AppendLine("DESCRICAO = @DESCRICAO,");
-        //        query.AppendLine("PALESTRANTE = @PALESTRANTE,");
-        //        query.AppendLine("DATA_PALESTRA = @DATA_PALESTRA,");
-        //        query.AppendLine("HORA_PALESTRA = @HORA_PALESTRA");
-        //        query.AppendLine("WHERE ID_PALESTRA = @ID_PALESTRA");
-
-        //        cf.Comando = cf.Conexao.CreateCommand();
-
-        //        cf.Comando.Parameters.AddWithValue("@TITULO", P.Titulo);
-        //        cf.Comando.Parameters.AddWithValue("@DESCRICAO", P.Descricao);
-        //        cf.Comando.Parameters.AddWithValue("@PALESTRANTE", P.Palestrante);
-        //        cf.Comando.Parameters.AddWithValue("@DATA_PALESTRA", P.Data);
-        //        cf.Comando.Parameters.AddWithValue("@HORA_PALESTRA", P.Hora);
-        //        cf.Comando.Parameters.AddWithValue("@ID_PALESTRA", P.Id);
-
-        //        cf.Comando.CommandType = CommandType.Text;
-        //        cf.Comando.CommandText = query.ToString();
-        //        cf.Conexao.Open();
-
-        //        linhasAfetadas = cf.Comando.ExecuteNonQuery();
-        //        cf.Conexao.Close();
-
-        //        return linhasAfetadas;
-        //    }
-        //    catch (Exception EX)
-        //    {
-        //        throw EX;
-        //    }
-        //}
+        
     }
 }
