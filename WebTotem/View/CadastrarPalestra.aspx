@@ -77,7 +77,7 @@
                             </div>
 
                             <div class="col-md-6">
-                                <asp:Label ID="lblData" runat="server" Text="Data da Palestra:"></asp:Label>
+                                <asp:Label ID="lblData" runat="server" Text="Data da Palestra:"  DataFormatString="{0:dd/MM/yyyy}"></asp:Label>
                                 &nbsp
                             &nbsp
                             &nbsp

@@ -86,7 +86,7 @@ namespace WebTotem.View
             catch (Exception )
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "Mensagem", "<script>mensagemErro();</script>");
-               
+                //throw;
             }
         }
     }
